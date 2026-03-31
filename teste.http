@@ -1,0 +1,17 @@
+### GET Material
+GET http://localhost:4004/odata/v4/material-srv/Material
+
+
+### GET filtroMateriais
+GET http://localhost:4004/odata/v4/material-srv/filtroMateriais(Qtde = 3)
+
+
+###POST criarMaterial
+POST http://localhost:4004/odata/v4/material-srv/criarMaterial
+Content-Type: application/json
+
+{
+  "NumMat": 1001,
+  "Nome": "Parafuso Aço",
+  "Descr": "Parafuso em aço inox"
+}
