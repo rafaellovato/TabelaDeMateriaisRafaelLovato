@@ -1,0 +1,49 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:form="sap.ui.layout.form"
+    xmlns:core="sap.ui.core">
+    
+    <Dialog id="novoMaterialDialog" title="Criação do Material" resizable="true" draggable="true" contentWidth="50%" contentHeight="50%">
+        <form:SimpleForm 
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="2"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="false" >
+                <form:content>
+                    <core:Title text="Criação do Material" level="Auto"/>
+                    
+                    <Label text="Número do Material" width="100%"  />
+                    <Input value="{oModelTable>/novoMaterialDialog/NumMat}" editable="true" width="auto" type="Number" />
+
+                    <Label text="Nome do Material" width="100%"  />
+                    <Input value="{oModelTable>/novoMaterialDialog/Nome}" editable="true" width="auto"/>        
+
+                    <Label text="Descrição do Material" width="100%"  />
+                    <Input value="{oModelTable>/novoMaterialDialog/Descr}" editable="true" width="auto"/>                                
+
+                </form:content>
+        </form:SimpleForm>
+
+        <beginButton>      
+            <Button icon="sap-icon://accept" type="Accept" text="Criar" 
+                    press=".onCriarMaterial" />            
+        </beginButton>
+
+        <endButton>
+            <Button icon="sap-icon://decline" type="Reject" text="Fechar" 
+                    press=".onFecharDialog"/>
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>
