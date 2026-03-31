@@ -18,6 +18,7 @@
 					<Title text="Materiais" level="H2"/>
                     <Input id='inputQtde' value='{oModelTable>/variavelInput}' width="20%"/>
                     <Button text="Filtrar" press="onFiltrar" icon="sap-icon://filter"/>
+					<Button text="Novo" press="onNovo" icon="sap-icon://add"/>
 				</content>
 			</OverflowToolbar>
 		</headerToolbar>        
