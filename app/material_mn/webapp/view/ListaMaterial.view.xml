@@ -1,0 +1,51 @@
+<mvc:View controllerName="materialmn.controller.ListaMaterial"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:table="sap.ui.table">
+    <Page id="page" title="{i18n>title}">
+	    <Table id="idProductsTable"
+            inset="false"
+            items="{
+                path: 'oModelTable>/tableMaterial',
+                sorter: {
+                    path: 'ID'
+                } 
+            }"
+        >
+		<headerToolbar>
+			<OverflowToolbar>
+				<content>
+					<Title text="Materiais" level="H2"/>
+                    <Input id='inputQtde' value='{oModelTable>/variavelInput}' width="20%"/>
+                    <Button text="Filtrar" press="onFiltrar" icon="sap-icon://filter"/>
+				</content>
+			</OverflowToolbar>
+		</headerToolbar>        
+	    <columns>
+			<Column>
+				<Text text="ID" />
+			</Column>
+			<Column>
+				<Text text="Número Material" />
+			</Column>
+			<Column>
+				<Text text="Nome" />
+			</Column>  
+			<Column>
+				<Text text="Descrição" />
+			</Column>                         
+		</columns> 
+
+        <items>
+			<ColumnListItem vAlign="Middle">
+				<cells>
+					<Text text="{oModelTable>ID}" />
+                    <Text text="{oModelTable>NumMat}" />
+                    <Text text="{oModelTable>Nome}" />
+                    <Text text="{oModelTable>Descr}" />					
+				</cells>
+			</ColumnListItem>             
+        </items>
+       </Table>
+    </Page>
+</mvc:View>
